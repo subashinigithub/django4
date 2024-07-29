@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'apiworkout.css'%}">
+</head>
+<body>
+    <h1>Nation Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+             
+                <th>Nation</th>
+       
+                <th>Year</th>
+                <th>Population</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in info %}
+            <tr>
+                
+                <td>{{ item.Nation }}</td>
+               
+                <td>{{ item.Year }}</td>
+                <td>{{ item.Population }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table border="1">
+   
+            <tr>
+                <th>measures</th>
+                <th>Annotations</th>
+                <th>Name</th>
+                <th>substitutions</th>
+            </tr>
+        
+       
+    {% for x in info1 %}
+    <tr>
+        <td>{{x.measures}}</td>
+  
+        
+      <table border="2">
+        <tr>
+            <th>Topic</th>
+            <th>Description</th>
+            
+
+        </tr>
+        {% for a,b in x.annotations.items %}
+        <tr>
+        <td>{{a}}</td>
+        <td>{{b}}</td>
+    </tr>
+        {% endfor %}
+    </table>
+        <tr>
+        <td>{{x.name}}</td>
+    </tr>
+    <tr>
+        <td>{{x.substitutions}}</td>
+    </tr>
+
+        {% endfor %}
+  
+    </table>
+
+
+</body>
+</html>

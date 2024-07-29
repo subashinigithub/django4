@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'apiworkout.css'%}">
+
+</head>
+<body>
+    <a href="{% url 'st2' %}">touch here</a>
+    <p>this is our new site</p>
+    <table border="2px">
+    {% for x in info %}
+    <tr>
+    <th>{{x.id}}</th>
+    <tr>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>total</th>
+            <th>discountPercentage</th>
+            <th>discountedTotal</th>
+
+        </tr>
+    {% for a in x.products %}
+    <tr>
+    <td>{{a.id}}</td>
+    <td>{{a.title}}</td>
+    <td>{{a.price}}</td>
+    <td>{{a.quantity}}</td>
+    <td>{{a.total}}</td>
+    <td>{{a.discountPercentage}}</td>
+    <td>{{a.discountedTotal}}</td>
+    <tr>
+
+        {% endfor %}
+
+
+    {% endfor %}
+</table>
+
+
+    
+</body>
+</html>

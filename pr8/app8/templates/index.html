@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <a href="{% url 'pg2' %}">pg2</a>
+    {% for x in a %}
+    <div>                                                                                                                                          
+    <img src="{% static 'images/img1.jpg' %}" alt="images" width="250px" height="250px">
+    <P>{{x}}</P>
+    </div>
+    {% endfor %}
+</body>
+</html>
